@@ -5,37 +5,36 @@ console.log(`${playGame()} wins the game!`);
 
 function playGame(){
 
-    // Declare playerWins and cpuWins variables
     let playerWins = 0,
         cpuWins = 0,
         round = 1,
-        result;
+        roundResult;
 
     // Start first to 3 game
     while (!(playerWins > 2 || cpuWins > 2)){
 
         // Round formatting in event of draw
-        if (result == 0)
+        if (roundResult == 0)
             console.log(`REPLAY ROUND ${round}`)
         else
             console.log(`ROUND ${round}`)
 
         // Gets result of new round
-        result = playRound();
+        roundResult = playRound();
 
         // Increments round and win totals
-        if (result == 1){
+        if (roundResult == 1){
             playerWins++;
             round++;
         }
-        else if (result == 2){
+        else if (roundResult == 2){
             cpuWins++;
             round++;
         }
         // Display score at end of round
         console.log(`PLAYER ${playerWins} - ${cpuWins} CPU\n\n`)
     }
-    // Return winner
+    // Return game winner
     if (playerWins > cpuWins)
         return "PLAYER";
     else
@@ -56,14 +55,14 @@ function playRound(){
         console.log("It's a draw!")
         return 0;
     }
-    // Win
+    // Player win
     else if (playerSelection === "Rock" && cpuSelection === "Scissors" 
             || playerSelection === "Paper" && cpuSelection === "Rock" 
             || playerSelection === "Scissors" && cpuSelection === "Paper"){
                 console.log("PLAYER wins the round!")
                 return 1;
             }
-    // Loss
+    // CPU win
     else {
         console.log("CPU wins the round!")
         return 2;
@@ -83,7 +82,7 @@ function rpsSelection(selector){
             playerSelection = prompt("Enter selection");
 
             // Converts to lowercase and capitalises first letter
-            playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+            playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 
             // Accepts if a match for correct input
             if (rpsArr.includes(playerSelection))
