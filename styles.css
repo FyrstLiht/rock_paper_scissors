@@ -5,6 +5,11 @@ html, body {
     box-sizing: border-box;
 }
 
+div {
+    box-shadow: inset 0px 0px 0px 2px black;
+}
+
+
 .container {
     margin: 0 auto;
     height: 100vh;
@@ -18,21 +23,76 @@ html, body {
     justify-content: center;
     align-items: center;
     gap: 40vh;
-    font-size: 5vh;
+    font-size: 10vh;
 }
+
+
 
 .handSelection {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.handSelectionMain {
+#hand {
+    height: 65%;
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 23vh;
+    text-align: center;
 }
+
+#handSelectionAttributes {
+    height: 65%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 3.5vh;
+    padding-left: 2%;
+    gap: 5%;
+}
+
+#handChoice {
+    width: 94%;
+}
+
+#handChoiceHeading {
+    font-size: 100%;
+}
+
+#handChoiceSelectors {
+    display: flex;
+    gap: .5vw;
+    font-size: 80%;
+}
+
+#colourSelector {
+    width: 94%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 100%;
+}
+
+#colourSelectionBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    font-size: 80%;
+}
+
+#continueGame {
+    position: absolute;
+    bottom: 10%;
+}
+
+
+
 
 .hidden {
     display: none;
