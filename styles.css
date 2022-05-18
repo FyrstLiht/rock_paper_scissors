@@ -21,6 +21,19 @@ html, body {
     font-size: 5vh;
 }
 
+.handSelection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.handSelectionMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hidden {
     display: none;
 }

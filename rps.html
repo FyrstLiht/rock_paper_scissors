@@ -10,14 +10,23 @@
 </head>
 <body>
 
-  <section id="splash">
-    <div class="container splash">
-      <div id="gameTitle">GAME TITLE</div>
-      <button id="startButton">START GAME</button>
-    </div>
+  <section class="container splash">
+    <div id="gameTitle">GAME TITLE</div>
+    <button id="startButton">START GAME</button>
   </section>
 
-  <section id="rpsSelection">
+  <section class="container handSelection">
+    <div class="handSelectionMain">
+      <div id="hand">HAND</div>
+      <div class="handSelectionAttributes">
+        <div id="left_right">LEFT/RIGHT</div>
+        <div id="colourSelection">SELECT COLOUR</div>
+      </div>
+    </div>
+      <button id="continueGame">CONTINUE</button>
+  </section> 
+
+  <!-- <section id="rpsSelection">
     <div class="container">
       <div class="hud">
         <div id="playerScore"></div>
@@ -43,7 +52,7 @@
       <p class="resultText"></p>
       <button id="newRound" type="button"></button>
     </div>
-  </section>
+  </section> -->
 
 </body>
 </html>

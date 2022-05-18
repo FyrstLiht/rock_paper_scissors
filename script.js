@@ -1,7 +1,7 @@
 // Simulates a ROCK PAPER SCISSORS game, first to 3 wins
 
 // PLAN
-
+// Hand selection screen (left/right, colour)
 
 
 const choices = ["ROCK", "PAPER", "SCISSORS"];
@@ -14,7 +14,7 @@ updateScore();
 changeSection(currentSection);
 
 const startButton = document.getElementById('startButton');
-startButton.addEventListener('click', rpsSelection);
+startButton.addEventListener('click', handSelection);
 
 
 function updateScore() {
@@ -27,11 +27,17 @@ function updateScore() {
 function changeSection(currentSection) {
     const sections = document.querySelectorAll('section');
     sections.forEach(item => {
-        if (item.id === currentSection)
+        if (item.classList.contains(currentSection))
             item.classList.remove('hidden')
         else 
             item.classList.add('hidden');
     });
+}
+
+function handSelection() {
+    changeSection('handSelection');
+    const continueGame = document.getElementById('continueGame');
+    continueGame.addEventListener('click', rpsSelection);
 }
 
 function rpsSelection() {
@@ -40,8 +46,3 @@ function rpsSelection() {
     rpsSelectors.forEach(item => item.addEventListener('mouseenter', hoverChoice));
     rpsSelectors.forEach(item => item.addEventListener('mouseleave', hoverChoice));
 }
-
-function hoverChoice(event) {
-    this.classList.toggle('hoverChoice');
-}
-
