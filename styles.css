@@ -20,3 +20,7 @@ html, body {
     gap: 40vh;
     font-size: 5vh;
 }
+
+.hidden {
+    display: none;
+}
