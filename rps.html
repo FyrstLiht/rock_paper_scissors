@@ -11,31 +11,54 @@
 <body>
 
   <section class="container splash">
+
     <div id="gameTitle">GAME TITLE</div>
-    <button id="startButton">START GAME</button>
-  </section>
-
-  <section class="container handSelection">
-    <div id="hand">LEFT HAND</div>
-
-    <div id="handSelectionAttributes">
-      <div id="handChoice">
-        <div id="handChoiceHeading">HAND CHOICE</div>
-        <div id="handChoiceSelectors">
-          <div id="left">LEFT</div>
-          <div id="right">RIGHT</div>
-        </div>
-      </div>
-      <div id="colourSelector">
-        <div>HAND COLOUR</div>
-        <div id="colourSelectionBox">COLOURS</div>
-      </div>
+    <div id="splashButtons">
+      <div id="startButton">START GAME</div>
+      <div id="customiseButton" class="cust menuButtons">CUSTOMISE</div>
+      <div id="creditsButton" class ="credits menuButtons">CREDITS</div>
     </div>
 
-    <button id="continueGame">CONTINUE</button>
-  </section> 
+    <div id="cust" class="menu cust hidden">
+      <div id="handDisplay">HAND</div>
 
-  <section class="container gameplay">
+      <div id="options">
+        <div>HAND CHOICE</div>
+
+        <div id="handSelection">
+          <div>LEFT</div>
+          <div>RIGHT</div>
+        </div>
+
+        <div id="colourSelection">
+          <div id="csDropHeading">
+            <div id="dropdownIcon"></div>
+            <div>HAND COLOUR</div>
+          </div>
+          <div id="colourSelectorMain"></div>
+        </div>
+
+      </div>
+      <div id="saveSettings" class="cust menuButtons">SAVE AND CLOSE</div>
+    </div>
+
+    <div id="credits" class="menu credits hidden">
+      <div id="goBack" class="credits menuButtons">GO BACK</div>
+    </div>
+
+  </section>
+
+  <section class="container playGame hidden">
+
+    <div>PLAY GAME</div>
+
+  </section>
+
+  
+
+  
+
+  <!-- <section class="container hidden gameplay">
     <div id="hud">
       <div id="playerScore"></div>
       <div id="cpuScore"></div>
@@ -47,7 +70,7 @@
       <div class="rpsSelector" id="PAPER">PAPER</div>
       <div class="rpsSelector" id="SCISSORS">SCISSORS</div>
     </div>
-  </section>
+  </section> -->
 
 
 

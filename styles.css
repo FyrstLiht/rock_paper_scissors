@@ -15,6 +15,7 @@ div {
     height: 100vh;
     width: 133vh;
     box-shadow: inset 0px 0px 0px 10px black;
+    background: white;
 }
 
 .splash {
@@ -26,74 +27,48 @@ div {
     font-size: 10vh;
 }
 
-
-
-.handSelection {
+#splashButtons {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#hand {
-    height: 65%;
-    width: 55%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 23vh;
-    text-align: center;
-}
-
-#handSelectionAttributes {
-    height: 65%;
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    font-size: 3.5vh;
-    padding-left: 2%;
+    width: 100%;
+    font-size: 40%;
     gap: 5%;
 }
 
-#handChoice {
-    width: 94%;
-}
 
-#handChoiceHeading {
-    font-size: 100%;
-}
-
-#handChoiceSelectors {
-    display: flex;
-    gap: .5vw;
-    font-size: 80%;
-}
-
-#colourSelector {
-    width: 94%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 100%;
-}
-
-#colourSelectionBox {
+#cust {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
-    font-size: 80%;
+    width: 110vh;
+    height: 80vh;
+    background-color: skyblue;
+    font-size: 40%;
+    gap: 2%;
 }
 
-#continueGame {
+#credits {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110vh;
+    height: 80vh;
+    background-color: skyblue;
+}
+
+#saveSettings {
     position: absolute;
     bottom: 10%;
 }
 
-
+#colourSelectorMain {
+    opacity: 1;
+}
 
 
 .hidden {
-    display: none;
+    display: none !important
 }
