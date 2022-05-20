@@ -104,7 +104,54 @@ div {
 #gameplay {
     flex-grow: 1;
     width: 100%;
+}
+
+#hands {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    gap: 20%;
+}
+
+#playerHand, #cpuHand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 30vh;
+}
+
+#rpsSelection {
+    position: absolute;
+    display: flex;
+    gap: 10vh;
+}
+
+#rock, #paper, #scissors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 30vh;
+    background: white;
+    font-size: 5vh;
+}
+
+
+#displayResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    height: 80vh;
+    width: 120vh;
+    font-size: 3vh;
+}
+
+#resultButtons {
+    display: flex;
+    gap: 10%;
 }
