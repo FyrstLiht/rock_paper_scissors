@@ -9,14 +9,20 @@ div {
     box-shadow: inset 0px 0px 0px 2px black;
 }
 
+.hidden {
+    display: none !important
+}
 
 .container {
     margin: 0 auto;
     height: 100vh;
     width: 133vh;
-    box-shadow: inset 0px 0px 0px 10px black;
+    box-shadow: inset 0px 0px 0px 5px black;
     background: white;
 }
+
+
+
 
 .splash {
     display: flex;
@@ -35,7 +41,6 @@ div {
     font-size: 40%;
     gap: 5%;
 }
-
 
 #cust {
     position: absolute;
@@ -69,6 +74,37 @@ div {
 }
 
 
-.hidden {
-    display: none !important
+
+
+.playGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#HUD {
+    height: 10vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 5vh;
+}
+
+#spacer {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+
+#gameplay {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -15,8 +15,10 @@ let playerWins = 0,
 
 const startButton = document.getElementById('startButton');
 const menuButtons = document.querySelectorAll('.menuButtons');
+// const backToSplash = document.getElementById('backToSplash');
 
 startButton.addEventListener('click', playGame);
+// backToSplash.addEventListener('click', changeSection);
 menuButtons.forEach(item => {
     item.addEventListener('click', toggleMenus);
 });
