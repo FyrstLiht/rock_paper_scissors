@@ -76,7 +76,7 @@ div {
 
 
 
-.playGame {
+.mainGame {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,15 +143,27 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     position: absolute;
     background: white;
-    height: 80vh;
+    height: 70vh;
     width: 120vh;
-    font-size: 3vh;
+    font-size: 6vh;
+}
+
+#result, #winningHand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vh;
+    text-align: center;
 }
 
 #resultButtons {
+    position: absolute;
     display: flex;
+    font-size: 3vh;
     gap: 10%;
+    bottom: 10%;
+    background: white;
 }

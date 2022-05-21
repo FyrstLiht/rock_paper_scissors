@@ -7,26 +7,37 @@ let playerWins = 0,
     playerHand = 'left',
     cpuHand = 'right',
     playerColour = 'red',
-    cpuColour = 'blue',
-    currentSection = 'splash';
+    cpuColour = 'blue';
 
 setButtons();
+startSplash();
 
+
+
+function loadHands() {
+
+}
+
+function gameplay() {
+
+}
 
 
 
 function setButtons() {
     const startButton = document.getElementById('startButton');
+    const newGame = document.getElementById('newGame');
+    const mainMenu = document.getElementById('mainMenu');
     const menuButtons = document.querySelectorAll('.menuButtons');
     const rpsSelectors = document.querySelectorAll('.rpsSelector');
-    const leftButton = document.getElementById('leftButton');
 
-    rpsSelectors.forEach(item => item.addEventListener('click', playRound));
+    rpsSelectors.forEach(item => item.addEventListener('click', newRound));
     startButton.addEventListener('click', startGame);
     menuButtons.forEach(item => {
         item.addEventListener('click', toggleMenus);
     });
-    leftButton.addEventListener('click', newRound);
+    newGame.addEventListener('click', startGame); 
+    mainMenu.addEventListener('click', startSplash); 
 }
 
 function toggleMenus() {
@@ -39,21 +50,34 @@ function toggleMenus() {
     });
 }
 
-function startGame() {
-    changeSection();
-    updateHUD();
-    // loadHands();
-    toggleHide('rpsSelection');
+function startSplash() {
+    toggleHide('splash', 'show');
+    toggleHide('mainGame', 'hide');
 }
 
-function changeSection() {
-    const sections = document.querySelectorAll('.container');
-    sections.forEach(item => {
-        if (item.classList.contains('hidden'))
-            item.classList.remove('hidden')
-        else 
-            item.classList.add('hidden');
-    });
+function toggleHide(item, hideStatus) {
+    const element = document.getElementById(item);
+    if (hideStatus === 'hide') element.classList.add('hidden');
+    else if (hideStatus === 'show') element.classList.remove('hidden');
+}
+
+function startGame() {
+    toggleHide('splash', 'hide');
+    toggleHide('mainGame', 'show');
+    toggleHide('displayResult', 'hide');
+    toggleHide('resultButtons', 'hide');
+    resetResults();
+    // loadHands();
+    setTimeout( () => {
+        toggleHide('rpsSelection', 'show');
+    }, 1000);
+}
+
+function resetResults() {
+    playerWins = 0,
+    cpuWins = 0;
+    winner = '';
+    updateHUD();
 }
 
 function updateHUD() {
@@ -63,20 +87,10 @@ function updateHUD() {
     cpuScore.textContent = `${cpuWins} CPU`;
 }
 
-function loadHands() {
-
-}
-
-function toggleHide(toHide) {
-    const hideThis = document.getElementById(toHide);
-    hideThis.classList.toggle('hidden');
-}
-
-function playRound(event) {
-    toggleHide('rpsSelection');
+function newRound(event) {
     getResult(event);
     gameplay();
-    displayResult();
+    setTimeout(displayResult(), 2000);
 }
 
 function getResult(event) {
@@ -98,47 +112,24 @@ function getResult(event) {
     }
 }
 
-function gameplay() {
-
-}
-
 function displayResult() {
-    toggleHide('displayResult');
+    toggleHide('displayResult', 'show');
     const resultText = document.getElementById('result');
     
     if (playerWins === 3 || cpuWins === 3){
         resultText.textContent = `${winner} wins the game!`;
-        const leftButton = getElementById('leftButton');
-        leftButton.textContent = 'MAIN MENU';
-        leftButton.addEventListener('click', changeSection); 
+        toggleHide('resultButtons', 'show');
+        updateHUD();
     } else {
-        if (winner === 'Draw')
+        if (winner === 'Draw'){
             resultText.textContent = 'Draw!';
-        else
+        } else {
             resultText.textContent = `${winner} wins the round!`;
+        }
+        updateHUD();
+        setTimeout( () => {
+            toggleHide('displayResult', 'hide');
+            toggleHide('rpsSelection', 'show');
+        }, 1250);
     }
-    updateHUD();
 }
-
-function newRound() {
-    toggleHide('displayResult');
-    toggleHide('rpsSelection');
-}
-
-
-
-
-
-
-// function startNewGame() {
-//     playerWins = 0,
-//     cpuWins = 0;
-//     const newRound = document.getElementById('newRound');
-//     newRound.textContent = 'NEW ROUND'
-//     newRound.addEventListener('click', rpsSelection);
-//     newRound.removeEventListener('click', startNewGame);
-//     updateHUD();
-//     rpsSelection();
-// }
-
-//     setTimeout(battleResult, 2000);

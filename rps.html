@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <section class="container splash">
+  <section id="splash" class="container splash hidden">
 
     <div id="gameTitle">GAME TITLE</div>
     <div id="splashButtons">
@@ -49,7 +49,7 @@
   </section>
 
 
-  <section class="container playGame hidden">
+  <section id="mainGame" class="container mainGame">
 
     <div id="HUD">
       <div id="playerScore"></div>
@@ -78,9 +78,11 @@
     <div id="displayResult" class="hidden">
 
       <div id="result"></div>
-      <div id="resultButtons">
-        <div id="leftButton">CONTINUE</div>
-        <div id="rightButton">RIGHT BUTTON</div>
+      <div id="winningHand">HAND</div>
+
+      <div id="resultButtons" class="hidden">
+        <div id="newGame">NEW GAME</div>
+        <div id="mainMenu">MAIN MENU</div>
       </div>
       
 
