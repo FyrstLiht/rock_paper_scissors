@@ -5,7 +5,6 @@ let playerWins = 0,
     cpuWins = 0,
     winner = '',
     playerHand = 'left',
-    cpuHand = 'right',
     playerColour = 'red',
     cpuColour = 'blue';
 
@@ -14,15 +13,10 @@ startSplash();
 
 
 
-function loadHands() {
-
-}
 
 function gameplay() {
 
 }
-
-
 
 function setButtons() {
     const startButton = document.getElementById('startButton');
@@ -30,6 +24,8 @@ function setButtons() {
     const mainMenu = document.getElementById('mainMenu');
     const menuButtons = document.querySelectorAll('.menuButtons');
     const rpsSelectors = document.querySelectorAll('.rpsSelector');
+    const leftHandSelect = document.getElementById('leftHandSelect');
+    const rightHandSelect = document.getElementById('rightHandSelect');
 
     rpsSelectors.forEach(item => item.addEventListener('click', newRound));
     startButton.addEventListener('click', startGame);
@@ -37,7 +33,21 @@ function setButtons() {
         item.addEventListener('click', toggleMenus);
     });
     newGame.addEventListener('click', startGame); 
-    mainMenu.addEventListener('click', startSplash); 
+    mainMenu.addEventListener('click', startSplash);
+    leftHandSelect.addEventListener('click', switchHands);
+    rightHandSelect.addEventListener('click', switchHands);
+}
+
+function switchHands(event) {
+    if (event.target.id === 'leftHandSelect') {
+        toggleHide('leftHandCust', 'show');
+        toggleHide('rightHandCust', 'hide');
+        playerHand = 'left';
+    } else {
+        toggleHide('leftHandCust', 'hide');
+        toggleHide('rightHandCust', 'show');
+        playerHand = 'right';
+    }
 }
 
 function toggleMenus() {
@@ -67,7 +77,7 @@ function startGame() {
     toggleHide('displayResult', 'hide');
     toggleHide('resultButtons', 'hide');
     resetResults();
-    // loadHands();
+    loadHands();
     setTimeout( () => {
         toggleHide('rpsSelection', 'show');
     }, 1000);
@@ -80,6 +90,20 @@ function resetResults() {
     updateHUD();
 }
 
+function loadHands() {
+    const hands = document.querySelectorAll('.hands');
+    hands.forEach(item => {
+        item.classList.add('hidden');
+    });
+    if (playerHand === 'left') {
+        hands[0].classList.remove('hidden');
+        hands[3].classList.remove('hidden');
+    } else {
+        hands[1].classList.remove('hidden');
+        hands[2].classList.remove('hidden');
+    }
+}
+
 function updateHUD() {
     const playerScore = document.getElementById('playerScore');
     const cpuScore = document.getElementById('cpuScore');
@@ -88,6 +112,7 @@ function updateHUD() {
 }
 
 function newRound(event) {
+    toggleHide('rpsSelection', 'hide');
     getResult(event);
     gameplay();
     setTimeout(displayResult(), 2000);

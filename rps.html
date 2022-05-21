@@ -20,14 +20,19 @@
     </div>
 
     <div id="cust" class="menu cust hidden">
-      <div id="handDisplay">HAND</div>
+      <div id="handDisplay">
+
+        <div id="leftHandCust">LEFT HAND</div>
+        <div id="rightHandCust" class="hidden">RIGHT HAND</div>
+
+      </div>
 
       <div id="options">
         <div>HAND CHOICE</div>
 
         <div id="handSelection">
-          <div>LEFT</div>
-          <div>RIGHT</div>
+          <div id="leftHandSelect">LEFT</div>
+          <div id="rightHandSelect">RIGHT</div>
         </div>
 
         <div id="colourSelection">
@@ -60,8 +65,10 @@
       
       <div id="hands">
 
-        <div id="playerHand">PLAYER HAND</div>
-        <div id="cpuHand">CPU HAND</div>
+        <div class="hands hidden" id="playerHandLeft">PLAYER HAND LEFT</div>
+        <div class="hands hidden" id="playerHandRight">PLAYER HAND RIGHT</div>
+        <div class="hands hidden" id="cpuHandLeft">CPU HAND LEFT</div>
+        <div class="hands hidden" id="cpuHandRight">CPU HAND RIGHT</div>
 
       </div>
     
