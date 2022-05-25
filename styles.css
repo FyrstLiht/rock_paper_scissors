@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     font-size: 10px;
     box-sizing: border-box;
+    overflow: clip;
 }
 
 div {
@@ -81,6 +82,7 @@ div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: visible;
 }
 
 #HUD {
@@ -111,15 +113,26 @@ div {
     justify-content: center;
     align-items: center;
     height: 100%;
-    gap: 20%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 #playerHand, #cpuHand {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     height: 30vh;
     width: 30vh;
+}
+
+#playerHand {
+    left: -15%;
+}
+
+#cpuHand {
+    right: -15%;
 }
 
 #rpsSelection {
@@ -166,4 +179,84 @@ div {
     gap: 10%;
     bottom: 10%;
     background: white;
+}
+
+
+
+
+
+
+
+
+.playerShoot {
+    animation: playerShoot 0.25s 4 ease-in;
+}
+
+.cpuShoot {
+    animation: cpuShoot 0.25s 4 ease-in;
+}
+
+.playerWin {
+    animation: playerWin 1.3s 1;
+}
+
+.playerLose {
+    animation: playerLose 1.3s 1;
+}
+
+.cpuWin {
+    animation: cpuWin 1.3s 1;
+}
+
+.cpuLose {
+    animation: cpuLose 1.3s 1;
+}
+
+
+@keyframes playerShoot {
+    66%{
+        transform: translate(-20vh, -10vh);
+    }
+}
+
+@keyframes cpuShoot {
+    66%{
+        transform: translate(20vh, -10vh);
+    }
+}
+
+@keyframes playerWin {
+    5%{
+        transform: translate(180%, 0);
+    }
+}
+
+@keyframes cpuWin {
+    5%{
+        transform: translate(-180%, 0);
+    }
+}
+
+@keyframes playerLose {
+    20%{
+        ;
+    }
+    30%{
+        transform: translate(-400%, 0);
+    }
+    100%{
+        transform: translate(-400%, 0);
+    }
+}
+
+@keyframes cpuLose {
+    20%{
+        ;
+    }
+    30%{
+        transform: translate(400%, 0);
+    }
+    100%{
+        transform: translate(400%, 0);
+    }
 }
