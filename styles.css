@@ -125,6 +125,7 @@ div {
     position: relative;
     height: 30vh;
     width: 30vh;
+    font-size: 5vh;
 }
 
 #playerHand {
@@ -212,6 +213,14 @@ div {
     animation: cpuLose 1.3s 1;
 }
 
+.playerDraw {
+    animation: playerDraw 1.3s 1;
+}
+
+.cpuDraw {
+    animation: cpuDraw 1.3s 1;
+}
+
 
 @keyframes playerShoot {
     66%{
@@ -234,6 +243,30 @@ div {
 @keyframes cpuWin {
     5%{
         transform: translate(-180%, 0);
+    }
+}
+
+@keyframes playerDraw {
+    5%{
+        transform: translate(80%, 0);
+    }
+    30%{
+        transform: translate(-50%, -20%);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes cpuDraw {
+    5%{
+        transform: translate(-80%, 0);
+    }
+    30%{
+        transform: translate(50%, -20%);
+    }
+    100%{
+        transform: translate(0, 0);
     }
 }
 
