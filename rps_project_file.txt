@@ -1,0 +1,50 @@
+Rock paper scissors style game based on the Janken variant.
+Play against the CPU in TBC rounds until one player gets a certain score.
+
+
+TODO
+Fade in hands 
+Zoom in on winner once returned to position
+Colour functionality
+toggleHide edit
+Clean up JS and CSS 
+Japanese aesthetic research
+
+
+
+TIMELINE
+
+SPLASH
+Splash screen of title, aesthetic TBC
+Splash has customise and credits buttons
+Title fades in, buttons fade in just after
+When start game clicked, splash fades out
+when others clicked it fades in a translucent screen
+
+HAND SELECTION
+Allows player to choose left/right, colour and size of hand
+
+GAME
+Game screen appear, then blurs
+Game screen has score and round
+RPS icons appear, one by one
+When hovered and dehovered they grow and shrink
+When clicked the others fade, the one clicked does ripple animation
+Game de-blurs, and starts to play
+3 2 1 go timing, hands bop each time
+On 'go', hands show RPS selection
+Whoever wins bops the other one off screen
+Winner is then shown along with score in the centre of the screen
+If draw, game screen blurs and icons appear prompting for new choice
+Round played again, hands bop with 1 go timing
+Repeat until Winner
+Once 5 reached by either player, round screen shown, then blurred and winner declared
+Play again button appears
+
+
+
+TECHNICAL AIMS
+Create fluid and consistent UI 
+Multiple types of icon animation
+Artistic ability (splash, icons, hands, colours)
+Game design
